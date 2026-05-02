@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+.eggs/
+dist/
+build/
+*.egg
+
+# Virtual environment
+venv/
+.venv/
+env/
+.env
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# Large raw data files (>100MB — excluded from GitHub)
+data/raw/reddit_wsb.csv
+data/raw/reddit_wsb_old.csv
+
+# Large processed files (>100MB — excluded from GitHub)
+data/processed/reddit_wsb_processed.csv
+data/processed/reddit_wsb_vader_posts.csv
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.code-workspace
+
+# Secrets
+.env
+*.env
+secrets.json

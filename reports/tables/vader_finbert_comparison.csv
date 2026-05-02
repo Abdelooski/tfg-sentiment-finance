@@ -1,0 +1,13 @@
+asset,sentiment_source,model,accuracy,precision,recall,f1,n_train,n_test
+BTC,vader,Logistic Regression,0.5212,0.5,0.3805,0.4322,940,236
+BTC,vader,Random Forest,0.5805,0.5745,0.4779,0.5217,940,236
+BTC,vader,XGBoost,0.5636,0.5397,0.6018,0.569,940,236
+BTC,finbert,Logistic Regression,0.5466,0.53,0.469,0.4977,940,236
+BTC,finbert,Random Forest,0.589,0.5833,0.4956,0.5359,940,236
+BTC,finbert,XGBoost,0.5254,0.5041,0.5398,0.5214,940,236
+SP500,vader,Logistic Regression,0.5,0.4384,0.4444,0.4414,646,162
+SP500,vader,Random Forest,0.5185,0.4667,0.5833,0.5185,646,162
+SP500,vader,XGBoost,0.5185,0.4712,0.6806,0.5568,646,162
+SP500,finbert,Logistic Regression,0.5185,0.4659,0.5694,0.5125,646,162
+SP500,finbert,Random Forest,0.5185,0.4712,0.6806,0.5568,646,162
+SP500,finbert,XGBoost,0.463,0.4324,0.6667,0.5246,646,162

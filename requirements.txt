@@ -1,0 +1,28 @@
+# Core data science
+pandas
+numpy
+scipy
+statsmodels
+scikit-learn
+matplotlib
+seaborn
+xgboost
+
+# NLP
+transformers
+torch
+nltk
+
+# Finance data
+yfinance
+
+# Web / API
+requests
+
+# Dashboard
+streamlit
+plotly
+
+# Utilities
+tqdm
+jupyterlab

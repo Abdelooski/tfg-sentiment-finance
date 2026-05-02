@@ -1,0 +1,7 @@
+asset,model,f1_price_only,f1_price_plus_sentiment,f1_delta,sentiment_improves_model
+BTC,Logistic Regression,0.4744,0.4322,-0.0422,False
+BTC,Random Forest,0.524,0.5217,-0.0023,False
+BTC,XGBoost,0.502,0.569,0.067,True
+SP500,Logistic Regression,0.4906,0.4414,-0.0492,False
+SP500,Random Forest,0.5789,0.5185,-0.0604,False
+SP500,XGBoost,0.5053,0.5568,0.0515,True

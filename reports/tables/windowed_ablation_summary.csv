@@ -1,0 +1,19 @@
+asset,target,model,f1_price_only,f1_price_plus_sentiment,f1_delta,sentiment_improves_model
+BTC,Direction_3d,Logistic Regression,0.5896,0.5085,-0.0811,False
+BTC,Direction_3d,Random Forest,0.5983,0.6288,0.0305,True
+BTC,Direction_3d,XGBoost,0.6,0.6199,0.0199,True
+BTC,Direction_5d,Logistic Regression,0.3243,0.3804,0.0561,True
+BTC,Direction_5d,Random Forest,0.4928,0.5314,0.0386,True
+BTC,Direction_5d,XGBoost,0.541,0.6116,0.0706,True
+BTC,Direction_7d,Logistic Regression,0.1446,0.3023,0.1577,True
+BTC,Direction_7d,Random Forest,0.4673,0.5178,0.0505,True
+BTC,Direction_7d,XGBoost,0.5374,0.5815,0.0441,True
+SP500,Direction_3d,Logistic Regression,0.5063,0.4225,-0.0838,False
+SP500,Direction_3d,Random Forest,0.6211,0.5147,-0.1064,False
+SP500,Direction_3d,XGBoost,0.6273,0.6154,-0.0119,False
+SP500,Direction_5d,Logistic Regression,0.5409,0.4348,-0.1061,False
+SP500,Direction_5d,Random Forest,0.6473,0.5359,-0.1114,False
+SP500,Direction_5d,XGBoost,0.6547,0.5622,-0.0925,False
+SP500,Direction_7d,Logistic Regression,0.4872,0.4476,-0.0396,False
+SP500,Direction_7d,Random Forest,0.619,0.4444,-0.1746,False
+SP500,Direction_7d,XGBoost,0.6188,0.6146,-0.0042,False

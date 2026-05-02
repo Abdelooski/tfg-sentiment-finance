@@ -1,0 +1,7 @@
+asset,model,accuracy,precision,recall,f1,train_acc,n_train,n_test
+BTC,Logistic Regression,0.4788,0.4691,0.6726,0.5527,0.5596,940,236
+BTC,Random Forest,0.5381,0.5175,0.5221,0.5198,0.7489,940,236
+BTC,XGBoost,0.5508,0.5263,0.6195,0.5691,0.8032,940,236
+SP500,Logistic Regression,0.4815,0.4348,0.5556,0.4878,0.5774,646,162
+SP500,Random Forest,0.5062,0.4512,0.5139,0.4805,0.7926,646,162
+SP500,XGBoost,0.4691,0.4314,0.6111,0.5057,0.8127,646,162

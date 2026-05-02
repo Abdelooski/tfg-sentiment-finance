@@ -1,0 +1,37 @@
+asset,target,feature_set,model,accuracy,precision,recall,f1,n_train,n_test
+BTC,Direction_3d,price_only,Logistic Regression,0.5299,0.5374,0.6529,0.5896,935,234
+BTC,Direction_3d,price_only,Random Forest,0.5983,0.6195,0.5785,0.5983,935,234
+BTC,Direction_3d,price_only,XGBoost,0.5556,0.5612,0.6446,0.6,935,234
+BTC,Direction_3d,price_plus_sentiment,Logistic Regression,0.5043,0.5217,0.4959,0.5085,935,234
+BTC,Direction_3d,price_plus_sentiment,Random Forest,0.5812,0.5804,0.686,0.6288,935,234
+BTC,Direction_3d,price_plus_sentiment,XGBoost,0.5598,0.56,0.6942,0.6199,935,234
+BTC,Direction_5d,price_only,Logistic Regression,0.4658,0.4688,0.2479,0.3243,935,234
+BTC,Direction_5d,price_only,Random Forest,0.5513,0.593,0.4215,0.4928,935,234
+BTC,Direction_5d,price_only,XGBoost,0.5214,0.5366,0.5455,0.541,935,234
+BTC,Direction_5d,price_plus_sentiment,Logistic Regression,0.5128,0.5556,0.2893,0.3804,935,234
+BTC,Direction_5d,price_plus_sentiment,Random Forest,0.5855,0.6395,0.4545,0.5314,935,234
+BTC,Direction_5d,price_plus_sentiment,XGBoost,0.5983,0.6116,0.6116,0.6116,935,234
+BTC,Direction_7d,price_only,Logistic Regression,0.3932,0.2667,0.0992,0.1446,935,234
+BTC,Direction_7d,price_only,Random Forest,0.5128,0.5376,0.4132,0.4673,935,234
+BTC,Direction_7d,price_only,XGBoost,0.5513,0.5755,0.5041,0.5374,935,234
+BTC,Direction_7d,price_plus_sentiment,Logistic Regression,0.4872,0.5098,0.2149,0.3023,935,234
+BTC,Direction_7d,price_plus_sentiment,Random Forest,0.594,0.6711,0.4215,0.5178,935,234
+BTC,Direction_7d,price_plus_sentiment,XGBoost,0.594,0.6226,0.5455,0.5815,935,234
+SP500,Direction_3d,price_only,Logistic Regression,0.5155,0.5195,0.4938,0.5063,640,161
+SP500,Direction_3d,price_only,Random Forest,0.5528,0.5413,0.7284,0.6211,640,161
+SP500,Direction_3d,price_only,XGBoost,0.4907,0.4964,0.8519,0.6273,640,161
+SP500,Direction_3d,price_plus_sentiment,Logistic Regression,0.4907,0.4918,0.3704,0.4225,640,161
+SP500,Direction_3d,price_plus_sentiment,Random Forest,0.5901,0.6364,0.4321,0.5147,640,161
+SP500,Direction_3d,price_plus_sentiment,XGBoost,0.5652,0.5545,0.6914,0.6154,640,161
+SP500,Direction_5d,price_only,Logistic Regression,0.5466,0.5513,0.5309,0.5409,640,161
+SP500,Direction_5d,price_only,Random Forest,0.5466,0.5317,0.8272,0.6473,640,161
+SP500,Direction_5d,price_only,XGBoost,0.5217,0.5141,0.9012,0.6547,640,161
+SP500,Direction_5d,price_plus_sentiment,Logistic Regression,0.5155,0.5263,0.3704,0.4348,640,161
+SP500,Direction_5d,price_plus_sentiment,Random Forest,0.559,0.5694,0.5062,0.5359,640,161
+SP500,Direction_5d,price_plus_sentiment,XGBoost,0.4969,0.5,0.642,0.5622,640,161
+SP500,Direction_7d,price_only,Logistic Regression,0.5031,0.5135,0.4634,0.4872,640,161
+SP500,Direction_7d,price_only,Random Forest,0.5031,0.5078,0.7927,0.619,640,161
+SP500,Direction_7d,price_only,XGBoost,0.472,0.4894,0.8415,0.6188,640,161
+SP500,Direction_7d,price_plus_sentiment,Logistic Regression,0.5093,0.5246,0.3902,0.4476,640,161
+SP500,Direction_7d,price_plus_sentiment,Random Forest,0.5342,0.566,0.3659,0.4444,640,161
+SP500,Direction_7d,price_plus_sentiment,XGBoost,0.5404,0.5364,0.7195,0.6146,640,161

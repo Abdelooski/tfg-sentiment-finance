@@ -1,0 +1,7 @@
+asset,model,f1_vader,f1_finbert,f1_delta_finbert_minus_vader,finbert_beats_vader
+BTC,Logistic Regression,0.4322,0.4977,0.0655,True
+BTC,Random Forest,0.5217,0.5359,0.0142,True
+BTC,XGBoost,0.569,0.5214,-0.0476,False
+SP500,Logistic Regression,0.4414,0.5125,0.0711,True
+SP500,Random Forest,0.5185,0.5568,0.0383,True
+SP500,XGBoost,0.5568,0.5246,-0.0322,False
