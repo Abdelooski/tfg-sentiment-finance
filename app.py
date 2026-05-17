@@ -28,7 +28,7 @@ TABLE_DIR = ROOT / "reports" / "tables"
 PATHS: dict[str, Path] = {
     "btc_price":          PROC_DIR  / "btc_processed.csv",
     "sp500_price":        PROC_DIR  / "sp500_processed.csv",
-    "vader_daily":        PROC_DIR  / "vader_daily.csv",
+    "vader_daily":        PROC_DIR  / "reddit_wsb_vader_daily.csv",
     "model_results":      TABLE_DIR / "model_results.csv",
     "ablation_results":   TABLE_DIR / "ablation_results.csv",
     "ablation_summary":   TABLE_DIR / "ablation_summary.csv",
@@ -486,47 +486,52 @@ def section_conclusion() -> None:
     st.markdown("""
 ### Hallazgos principales
 
-**1. Predictibilidad de la dirección del mercado**
-Los modelos ML superan el baseline de mayoría de clase en ambos activos,
-aunque el margen es modesto — consistente con la hipótesis de mercados eficientes.
+**1. Resultados de los modelos base**
+El mejor resultado global se obtiene en Bitcoin con XGBoost, con una accuracy de 0,5508 y un F1-score
+de 0,5691. Este resultado supera moderadamente el baseline de mayoría de clase en Bitcoin. En cambio,
+en el S&P 500 ningún modelo supera el baseline en accuracy, por lo que la capacidad predictiva es más
+limitada bajo la configuración experimental utilizada.
 
 **2. Contribución del sentimiento**
-El análisis de ablación cuantifica la mejora real de añadir sentimiento sobre
-features de precio puro. BTC tiende a mostrar mayor sensibilidad al sentimiento
-de Reddit WSB que el S&P 500.
+El análisis de ablación muestra que la incorporación de variables de sentimiento no mejora todos los
+modelos de forma uniforme. La mejora aparece principalmente en XGBoost, tanto para Bitcoin como para
+el S&P 500. En Regresión Logística y Random Forest, el sentimiento no aporta una mejora clara en el
+horizonte diario.
 
-**3. VADER vs FinBERT**
-Ambos modelos de sentimiento producen scores similares en términos predictivos.
-FinBERT (transformer preentrenado en textos financieros) no mejora
-consistentemente a VADER (basado en reglas) para este corpus de Reddit.
+**3. Análisis multi-horizonte**
+En Bitcoin, el sentimiento mejora 8 de las 9 combinaciones analizadas y todos los modelos mejoran en
+los horizontes de 5 y 7 días. En el S&P 500, en cambio, la incorporación de sentimiento no mejora
+ninguna de las 9 combinaciones multi-horizonte. Esto sugiere que Bitcoin puede ser más sensible a
+señales sociales agregadas que un índice bursátil amplio y más institucionalizado.
 
-**4. Causalidad de Granger**
-El sentimiento VADER **no** Granger-causa los retornos futuros (resultado esperado:
-los mercados descuentan rápidamente la información pública).
-Sin embargo, los retornos **sí** Granger-causan el sentimiento, lo que indica
-que la comunidad de Reddit reacciona a los movimientos del mercado —
-el sentimiento es **reactivo**, no predictivo.
+**4. VADER vs FinBERT**
+FinBERT mejora el rendimiento de Regresión Logística y Random Forest en ambos activos, pero XGBoost
+obtiene mejores resultados con VADER. Por tanto, no puede afirmarse que FinBERT supere de forma general
+a VADER. El mejor resultado global en Bitcoin sigue correspondiendo a VADER con XGBoost.
 
-**5. Horizonte temporal**
-Los modelos de clasificación multi-horizonte (3d, 5d, 7d) no muestran
-mejoras consistentes respecto al objetivo de 1 día, lo que sugiere que la
-señal de sentimiento de Reddit se disipa rápidamente.
+**5. Causalidad de Granger**
+El test de causalidad de Granger no muestra evidencia significativa de que el sentimiento preceda a
+los retornos futuros. En cambio, los retornos sí preceden al sentimiento en varios rezagos. Esto sugiere
+que el sentimiento de Reddit funciona más como una reacción al mercado que como una señal anticipatoria clara.
 
 ---
 ### Limitaciones
 
-- El análisis se basa únicamente en Reddit WSB, una comunidad sesgada hacia
-  activos especulativos y usuarios retail.
-- El periodo de estudio coincide con alta volatilidad post-COVID; los resultados
-  pueden no generalizarse a otros regímenes de mercado.
-- La muestra para FinBERT se limita a 100.000 posts por restricciones computacionales.
+- WallStreetBets representa una comunidad concreta de inversores minoristas y no al conjunto del mercado.
+- El sentimiento se agrega a nivel diario, por lo que no captura dinámicas intradía.
+- FinBERT se aplica sobre una muestra aleatoria reproducible de 100.000 publicaciones debido a su coste computacional.
+- El análisis se limita a Bitcoin y al S&P 500.
+- Los resultados corresponden al periodo analizado y no deben generalizarse automáticamente a otros activos
+  o contextos de mercado.
 
 ---
 ### Trabajo futuro
 
-- Ampliar fuentes de datos (Twitter/X, noticias financieras, Google Trends).
-- Incorporar modelos secuenciales (LSTM, Transformer) para capturar dependencias temporales.
-- Explorar modelos de regresión (predicción de magnitud del retorno, no solo dirección).
+- Ampliar el análisis a más fuentes textuales, como otros subreddits, noticias financieras o Google Trends.
+- Construir señales de sentimiento específicas por activo.
+- Aplicar FinBERT al corpus completo o usar un muestreo estratificado por fecha.
+- Incorporar validación walk-forward y modelos temporales más avanzados.
+- Ampliar la comparación a otras criptomonedas, acciones individuales o índices sectoriales.
 """)
 
     # Quick stats panel
